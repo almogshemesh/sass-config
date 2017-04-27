@@ -1,0 +1,389 @@
+$facebook: #4a66a0
+$youtube: #cc181e
+$twitter: #55acee
+$googlePlus: #dc4e41
+$cocaCola: #ed1c16
+$instagram: #3f729b
+$linkedin: #0077b5
+$kickstarter: #2bde73
+$jquery: #0769ad
+$whatsapp: #43d854
+
+=max-w($val)
+	max-width: $val
+
+=max-h($val)
+	max-height: $val
+	
+=marginAuto()
+	margin: auto
+
+=margin($val)
+	margin: $val
+	
+=padding($val)
+	padding: $val
+	
+=left()
+	text-align: left
+	
+=center()
+	text-align: center
+	
+=right()
+	text-align: right
+
+=justify()
+	text-align: justify
+	
+=top()
+	vertical-align: top
+	
+=middle()
+	vertical-align: middle
+	
+=bottom()
+	vertical-align: bottom
+	
+=baseline()
+	vertical-align: baseline
+
+=super()
+	vertical-align: super
+	
+=table()
+	display: table
+	
+=cell($verticalAlign,$textAlign,$padding)
+	display: table-cell
+	vertical-align: $verticalAlign
+	text-align: $textAlign
+	padding: $padding
+
+=tableFixed()
+	table-layout: fixed
+
+=inlineTable()
+	display: inline-table
+	
+=size($val)
+	font-size: $val
+	
+=weight($val)
+	font-weight: $val
+	
+=uppercase
+	text-transform: uppercase
+	
+=lowercase
+	text-transform: lowercase
+	
+=capitalize
+	text-transform: capitalize
+
+=radius	($val)
+	border-radius: $val
+	-webkit-border-radius: $val
+	-moz-border-radius: $val
+	-o-border-radius: $val
+	-ms-border-radius: $val
+
+=inlineBlock()
+	display: inline-block
+		
+=block()
+	display: block
+	
+=inline()
+	display: inline
+	
+=underline()
+	text-decoration: underline
+	
+=noDecor()
+	text-decoration: none
+	
+=erase()
+	text-decoration: line-through
+	
+=overLine()
+	text-decoration: line-through
+
+=scale($val)
+	transform: scale($val)
+	-webkit-transform: scale($val)
+	-moz-transform: scale($val)
+	-o-transform: scale($val)
+	-ms-transform: scale($val)
+
+=transition($val)
+	transition: all $val ease-in-out
+	-webkit-transition: all $val ease-in-out
+	-moz-transition: all $val ease-in-out
+	-o-transition: all $val ease-in-out
+	-ms-transition: all $val ease-in-out
+
+=hide()
+	display: none
+	
+=mirror()
+	transform: scale(-1, 1)
+	-webkit-transform: scale(-1, 1)
+	-moz-transform: scale(-1, 1)
+	-o-transform: scale(-1, 1)
+	-ms-transform: scale(-1, 1)
+	
+=moveY($val)
+	transform: translateY($val)
+	-webkit-transform: translateY($val)
+	-moz-transform: translateY($val)
+	-o-transform: translateY($val)
+	-ms-transform: translateY($val)	
+	
+=moveX($val)
+	transform: translateX($val)
+	-webkit-transform: translateX($val)
+	-moz-transform: translateX($val)
+	-o-transform: translateX($val)
+	-ms-transform: translateX($val)
+	
+=move($x,$y)
+	transform: translate($x,$y)
+	-webkit-transform: translate($x,$y)
+	-moz-transform: translate($x,$y)
+	-o-transform: translate($x,$y)
+	-ms-transform: translate($x,$y)
+	
+=media($val)
+	@media only screen and (max-width:$val)
+		@content
+		
+=bg($val)
+	background: $val
+	
+=italic()
+	font-style: italic
+	
+=bgX($val)
+	background-position-x: $val
+	
+=bgY($val)
+	background-position-y: $val
+	
+=w($val)
+	width: $val
+	
+=h($val)
+	height: $val
+	
+=c($val)
+	color: $val
+	
+=noBullets()
+	list-style-type: none
+	
+=pd($val)
+	+padding($val)
+	
+=mr($val)
+	+margin($val)
+	
+=cover()
+	background-size: cover
+	
+=contain()
+	background-size: contain
+	
+=static()
+	position: static	
+	
+=absolute()
+	position: absolute
+	
+=fixed()
+	position: fixed	
+	
+=relative()
+	position: relative
+	
+=rotate($val)
+	transform: rotate($val+deg)
+	-webkit-transform: rotate($val+deg)
+	-moz-transform: rotate($val+deg)
+	-o-transform: rotate($val+deg)
+	-ms-transform: rotate($val+deg)
+	
+=gradient($direction, $colors)
+	$dir1: 0
+	$dir2: 0
+	
+	@if $direction == top
+		$dir1: top
+		$dir2: bottom
+		
+	@else if $direction == bottom
+		$dir1: bottom
+		$dir2: top
+		
+	@else if $direction == right
+		$dir1: right
+		$dir2: left
+		
+	@else if $direction == left
+		$dir1: left
+		$dir2: right
+		
+	@else if $direction <= 0
+		$dir1: $direction + deg
+		$dir2: 180 + $direction + deg
+		
+	@else if $direction >= 0
+		$dir1: $direction + deg
+		$dir2: 180 - $direction + deg
+			
+	background: nth($colors, 1) /* Old browsers */
+	background: -moz-linear-gradient($dir1, $colors) /* FF3.6-15 */
+	background: -webkit-linear-gradient($dir1, $colors) /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to $dir2, $colors) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	
+=radial($colors)
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+51,7db9e8+100;Blue+Gloss+Default */
+	background: nth($colors, 1) /* Old browsers */
+	background: -moz-radial-gradient(center, ellipse cover, $colors) /* FF3.6-15 */
+	background: -webkit-radial-gradient(center, ellipse cover, $colors) /* Chrome10-25,Safari5.1-6 */
+	background: radial-gradient(ellipse at center, $colors) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+=font($val)
+	font-family: $val
+
+=f($family,$size,$weight)
+	font-family: $family
+	font-size: $size
+	font-weight: $weight
+
+=pointer()
+	cursor: pointer
+
+=grab()
+	cursor: -webkit-grab
+
+=arrow()
+	cursor: default
+
+=disabled()
+	cursor: not-allowed
+
+	
+=link()
+	color: inherit
+	text-decoration: none
+	+pointer()
+	+inlineBlock()
+	
+=btn($size,$weight,$color,$bg,$radius,$pd)
+	+inlineBlock()
+	+noDecor()
+	+radius($radius)
+	+bg($bg)
+	+c($color)
+	+pd($pd)
+	+size($size)
+	+weight($weight)
+	+pointer()
+	
+=b($val)
+	border: $val
+	
+=bt($val)
+	border-top: $val
+	
+=br($val)
+	border-right: $val	
+	
+=bb($val)
+	border-bottom: $val	
+	
+=bl($val)
+	border-left: $val
+	
+=rtl()
+	direction: rtl
+	
+=ltr()
+	direction: ltr
+	
+=animation($name,$time)
+	-webkit-animation-name: $name /* Chrome, Safari, Opera */
+	-webkit-animation-duration: $time /* Chrome, Safari, Opera */
+	animation-name: $name
+	animation-duration: $time
+	animation-timing-function: ease-in-out
+	
+	@-webkit-keyframes #{$name}
+		@content
+		
+=bgSize($val)
+	background-size: $val
+	
+=opacity($val)
+	opacity: $val	
+	
+=o($val)
+	opacity: $val
+
+=scrollY()
+	overflow-y: scroll
+	
+=scrollX()
+	overflow-x: scroll	
+	
+=scroll()
+	overflow: scroll
+
+=shadow($x,$y,$blur,$spread,$color)
+	box-shadow: $x $y $blur $spread $color
+	
+=textShadow($x,$y,$blur,$color)
+	text-shadow: $x $y $blur $color
+	
+=unselected()
+	-moz-user-select: none
+	-webkit-user-select: none
+	-ms-user-select:none
+	user-select:none
+	-o-user-select:none
+	
+=z($val)
+	z-index: $val
+	
+/* css by browsers: explorer9+ */
+=explorer9()
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+		@content
+		
+/* css by browsers: firefox */
+=firefox()
+	@-moz-document url-prefix()
+		@content
+
+/* css by browsers: safari */
+=safari()
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+		::i-block-chrome, .container
+			@content
+
+/* css by browsers: chrome */			
+=chrome()
+	@media screen and (-webkit-min-device-pixel-ratio:0)
+		@content
+		
+=placeholder($val)
+	::-webkit-input-placeholder
+		color: $val
+		
+	::-moz-input-placeholder
+		color: $val
+		
+	::-ms-input-placeholder
+		color: $val
+		
