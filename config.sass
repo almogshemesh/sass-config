@@ -1,14 +1,3 @@
-$facebook: #4a66a0
-$youtube: #cc181e
-$twitter: #55acee
-$googlePlus: #dc4e41
-$cocaCola: #ed1c16
-$instagram: #3f729b
-$linkedin: #0077b5
-$kickstarter: #2bde73
-$jquery: #0769ad
-$whatsapp: #43d854
-
 =max-w($val)
 	max-width: $val
 
@@ -355,6 +344,36 @@ $whatsapp: #43d854
 	
 =z($val)
 	z-index: $val
+
+=borderBox()
+	box-sizing: border-box
+
+=contentBox()
+	box-sizing: content-box
+
+=outline($val)
+	outline: $val
+
+=abs($direction,$val)
+	position: absolute
+
+	@if $direction == t
+		top: $val
+
+	@else if $direction == r
+		right: $val
+
+	@else if $direction == b
+		bottom: $val
+
+	@else if $direction == l
+		left: $val
+
+=noResize()
+	resize: none
+
+=line($val)
+	line-height: $val
 	
 /* css by browsers: explorer9+ */
 =explorer9()
