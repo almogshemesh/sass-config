@@ -375,6 +375,14 @@
 =line($val)
 	line-height: $val
 	
+=fl($direction)
+	@if $direction == l
+		float: left
+	@else if $direction == r
+		float: right
+	@else if $direction == n
+		float: none
+	
 /* css by browsers: explorer9+ */
 =explorer9()
 	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
